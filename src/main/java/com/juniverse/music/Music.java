@@ -7,12 +7,16 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
 /**
  * Reproduce notas MIDI con el sintetizador de software de Java.
  *
  * @author linux
  */
 public class Music implements AutoCloseable {
+    private static final Logger LOGGER = AppLogger.get(Music.class);
+
 
     private final Synthesizer midiSynth;
 
@@ -65,7 +69,7 @@ public class Music implements AutoCloseable {
             Thread.sleep(TimeUnit.MICROSECONDS.toMillis(midiSynth.getLatency()));
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt(); // conserva la señal de interrupción
-            ex.printStackTrace(System.err);
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 }

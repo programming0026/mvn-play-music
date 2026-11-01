@@ -1,11 +1,16 @@
 package com.juniverse.music;
 
+
+import java.util.logging.Logger;
+import java.util.logging.Level;
 /**
  * Toca el "Himno de la Alegría" (Beethoven) nota por nota.
  *
  * @author linux
  */
 public class PlayMusic {
+    private static final Logger LOGGER = AppLogger.get(PlayMusic.class);
+
 
     private final static int RE_GRAVE = 50;
     private final static int SOL = 55;
@@ -87,7 +92,7 @@ public class PlayMusic {
                 music.sound(SOL, BLANCA);
             }
         } catch (Exception ex) {
-            ex.printStackTrace(System.err);
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 }
