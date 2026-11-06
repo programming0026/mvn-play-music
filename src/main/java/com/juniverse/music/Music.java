@@ -12,7 +12,7 @@ import java.util.logging.Level;
 /**
  * Reproduce notas MIDI con el sintetizador de software de Java.
  *
- * @author linux
+ * @author Java Universe
  */
 public class Music implements AutoCloseable {
     private static final Logger LOGGER = AppLogger.get(Music.class);

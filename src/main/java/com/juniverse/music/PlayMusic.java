@@ -6,7 +6,7 @@ import java.util.logging.Level;
 /**
  * Toca el "Himno de la Alegría" (Beethoven) nota por nota.
  *
- * @author linux
+ * @author Java Universe
  */
 public class PlayMusic {
     private static final Logger LOGGER = AppLogger.get(PlayMusic.class);
